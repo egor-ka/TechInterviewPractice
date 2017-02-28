@@ -27,6 +27,6 @@ public class QueueByTwoStacks {
     private void refillOutput() {
         while (!input.isEmpty()) {
             output.push(input.pop());
-        };
+        }
     }
 }
