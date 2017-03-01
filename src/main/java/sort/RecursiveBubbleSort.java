@@ -9,7 +9,7 @@ public class RecursiveBubbleSort {
     }
 
     private static void recursiveSort(int[] array, int length) {
-        if (isSorted(array, length - 1)) {
+        if (length < 1) {
             return;
         }
         for (int i = 0; i < length - 1; i++) {
@@ -24,15 +24,5 @@ public class RecursiveBubbleSort {
         int tmp = array[pos];
         array[pos] = array[pos + 1];
         array[pos + 1] = tmp;
-    }
-
-
-    private static boolean isSorted(int[] array, int length) {
-        for (int i = 0; i < length; i++) {
-            if (array[i] > array[i + 1]) {
-                return false;
-            }
-        }
-        return true;
     }
 }
