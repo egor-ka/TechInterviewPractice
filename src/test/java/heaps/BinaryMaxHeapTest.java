@@ -12,11 +12,23 @@ public class BinaryMaxHeapTest {
 
         assertFalse(heap.isEmpty());
 
+        // delete from empty heap
+        assertNull(heap.delMax());
+
+        // peek in empty heap
+        assertNull(heap.peek());
+
+        // search in empty heap
+        assertEquals(-1, heap.search(0));
+
         heap.insert(5);
         heap.insert(6);
         heap.insert(7);
         heap.insert(8);
         heap.insert(9);
+
+        // search element that is not in heap
+        assertEquals(-1, heap.search(0));
 
         assertEquals((Integer)9, heap.peek());
 

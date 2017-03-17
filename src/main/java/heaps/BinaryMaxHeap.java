@@ -15,18 +15,24 @@ public class BinaryMaxHeap {
     }
 
     public Integer peek() {
+        if (heap.size() == 0) {
+            return null;
+        }
         return heap.get(0);
     }
 
     //if element is found returns it's index, or -1 if not
     public int search(Integer value) {
+        if (heap.size() == 0) {
+            return -1;
+        }
         Deque<Integer> stack = new LinkedList<>();
         stack.add(0);
 
         int index;
         while (!stack.isEmpty()) {
             index = stack.poll();
-            if (index > heap.size() || heap.get(index) < value) {
+            if (index >= heap.size() || heap.get(index) < value) {
                 continue;
             }
             stack.add(2 * index + 1);
@@ -39,6 +45,9 @@ public class BinaryMaxHeap {
     }
 
     public Integer delMax() {
+        if (heap.size() == 0) {
+            return null;
+        }
         Integer tmp = heap.get(0);
         heap.set(0, heap.get(heap.size() - 1));
         heap.remove(heap.size() - 1);
