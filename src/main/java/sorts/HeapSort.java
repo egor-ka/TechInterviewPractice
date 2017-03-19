@@ -3,7 +3,7 @@ package sorts;
 public class HeapSort {
 
     public static void doSort(int[] array) {
-        buidlMaxHeap(array);
+        buildMaxHeap(array);
         int heapSize = array.length;
         for (int i = heapSize - 1; i > 0; i--) {
             swap(array, 0, i);
@@ -12,7 +12,7 @@ public class HeapSort {
         }
     }
     
-    private static void buidlMaxHeap(int[] array) {
+    private static void buildMaxHeap(int[] array) {
         for (int i = array.length / 2; i >= 0; i--) {
             maxHeapify(array, i, array.length);
         }
